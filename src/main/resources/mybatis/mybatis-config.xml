@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--多机环境下，表数据更新的时候不刷新缓存-->
+        <setting name="cacheEnabled" value="false"/>
+        <!--将表字段映射成驼峰形式，不用自己挨个写-->
+        <setting name="mapUnderscoreToCamelCase" value="true"></setting>
+        <!--生产ID-->
+        <setting name="useGeneratedKeys" value="true"></setting>
+        <!--缓存文件 提高性能-->
+        <setting name="defaultExecutorType" value="REUSE"></setting>
+        <!--配置事务的操作时间，事务超过该事件发起请求关闭事务-->
+        <setting name="defaultStatementTimeout" value="600"></setting>
+    </settings>
+    
+    <!--定义类型的别名-->
+    <typeAliases>
+        <typeAlias type="com.guilin.realestate.common.model.User" alias="user"></typeAlias>
+    </typeAliases>
+    <mappers>
+        <mapper resource="mapper/user.xml"></mapper>
+    </mappers>
+</configuration>

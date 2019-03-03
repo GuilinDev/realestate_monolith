@@ -1,5 +1,7 @@
 *.class
 
+*.properties
+
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
@@ -13,3 +15,9 @@
 *.jar
 *.war
 *.ear
+
+# Maven
+log/
+target/
+src/main/resources/application.properties
+src/main/resources/application.properties
