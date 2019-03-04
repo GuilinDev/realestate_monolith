@@ -33,14 +33,14 @@ public class DruidConfig {
     @Bean
     public Filter statFilter() {
         StatFilter filter = new StatFilter();
-        filter.setSlowSqlMillis(1);//慢日志的设定时间
+        filter.setSlowSqlMillis(5000);//慢日志的设定时间
         filter.setLogSlowSql(true);//需要打印慢日志
         filter.setMergeSql(true);//将慢日志合并
         return filter;
     }
 
     /**
-     * 添加一个Druid监控
+     * 添加一个Druid监控，如果是本地就位于http://localhost:8090/druid/
      */
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
